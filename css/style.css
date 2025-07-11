@@ -1,0 +1,44 @@
+header, p {
+    text-align: center;
+}
+fieldset {
+    width: 50%;
+    margin: 2rem auto;
+    text-align: center;
+    padding: 2rem;
+
+}
+legend {
+    text-align: left;
+    font-weight: bold;
+}
+input[ type = submit ] {
+    width: 100px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.error {
+    color: red;
+    font-weight: bold;
+    background-color: #d2a0a0;
+    width: 50%;
+    margin: 0.5rem auto;
+    border-radius: 0.7rem;
+    padding: 1rem;
+}
+
+main {
+    text-align: center;
+}
+button a {
+    text-decoration: none;
+    color: black;
+}
+button {
+    width: 100px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+}
