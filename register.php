@@ -15,25 +15,6 @@ unset($_SESSION['username']);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
     <title>Register</title>
-    <style>
-        fieldset {
-            width: 50%;
-            margin: 2rem auto;
-            text-align: center;
-            padding: 2rem;
-
-        }
-        legend {
-            text-align: left;
-            font-weight: bold;
-        }
-        input[ type = submit ] {
-            width: 100px;
-            padding: 10px;
-            border: 1px solid black;
-            border-radius: 0.5rem;
-        }
-    </style>
 </head>
 <body>
 <header>
