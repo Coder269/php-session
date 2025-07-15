@@ -40,8 +40,7 @@ unset($_SESSION['username']);
             <input type="submit" value="Register">
         </fieldset>
     </form>
-    <p>If you already have an account please <a href="login.php" >Log in Here</a>!</p>
-
+    <p>If you already have an account, please <a href="login.php" >Log in Here</a>!</p>
 </main>
 </body>
 </html>
