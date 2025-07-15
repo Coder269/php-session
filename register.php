@@ -44,7 +44,7 @@ unset($_SESSION['username']);
         <fieldset>
             <legend>Registration</legend>
             <label for="username">Username :</label>
-            <input type="text" name="username" id="username"  maxlength="50" value="<?=$username ?>" >
+            <input type="text" name="username" id="username" required maxlength="50" value="<?=$username ?>" >
             <br>
             <div class=<?= isset($errors[0]) ? 'error' : '' ?>><?= isset($errors[0]) ? $errors[0] : ''; ?></div>
             <div class=<?= isset($errors[1]) ? 'error' : '' ?>><?= isset($errors[1]) ? $errors[1] : ''; ?></div>
