@@ -11,8 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST))
         $errors[] = 'Username must be less than 50 characters';
     if (empty($password))
         $errors[] = 'Please enter a password';
-    if (strlen($password) > 50)
-        $errors[] = 'Password must be less than 50 characters';
+    if (strlen($password) > 255)
+        $errors[] = 'Password must be less than 255 characters';
 
     if (empty($errors))
     {
@@ -27,6 +27,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST))
         header('Location: login.php');
         exit();
     }
+    else {
+        session_start();
+        $_SESSION['errors'] = $errors;
+        $_SESSION['username'] = $username;
+        header('Location: register.php');
+        exit();
+    }
 }
-
-?>
