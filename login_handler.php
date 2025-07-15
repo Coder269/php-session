@@ -8,16 +8,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && !empty($_POST))
     $password = isset($_POST['password']) && !empty($_POST['password']) ?  $_POST['password'] : '';
 
     if (empty($username))
-        $errors[] = 'Please enter a username';
+        $errors[0] = 'Please enter a username';
 
     if (strlen($username) > 50)
-        $errors[] = 'Username must be less than 50 characters';
+        $errors[1] = 'Username must be less than 50 characters';
 
     if (empty($password))
-        $errors[] = 'Please enter a password!';
+        $errors[2] = 'Please enter a password!';
 
     if (strlen($password) > 255)
-        $errors[] = 'Password must be less than 255 characters';
+        $errors[3] = 'Password must be less than 255 characters';
 
     if (empty($errors))
     {
