@@ -16,6 +16,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && !empty($_POST))
     if (empty($password))
         $errors[] = 'Please enter a password!';
 
+    if (strlen($password) > 255)
+        $errors[] = 'Password must be less than 255 characters';
+
     if (empty($errors))
     {
         $pdo = new PDO(DSN, USER, PASSWORD);
@@ -39,7 +42,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && !empty($_POST))
             exit();
         }
     }
+    if (!empty($errors)) {
+        session_start();
+        $_SESSION['errors'] = $errors;
+        $_SESSION['username'] = $username;
+        header('Location: login.php');
+        exit();
+    }
 }
-
-
-?>

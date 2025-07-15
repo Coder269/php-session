@@ -1,21 +1,33 @@
+<?php
+
+session_start();
+$errors = isset($_SESSION['errors']) ? $_SESSION['errors'] : [];
+$username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
+
+//nettoyer la session
+unset($_SESSION['errors']);
+
+
+?>
+
 <!doctype html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
-    <title>Login</title>
+    <title>Log-in Page</title>
 </head>
 <body>
 <header>
-    <h1>Log in</h1>
+    <h1>Log-in</h1>
 </header>
 <main>
 <form action="login_handler.php" method="post">
     <fieldset>
         <legend>Sign-in</legend>
         <label for="username">Username :</label>
-        <input type="text" name="username" id="username" required maxlength="50">
+        <input type="text" name="username" id="username" required maxlength="50" value="<?= $username?>">
         <?php
         if (!empty($errors[0]))
         echo "<div class='error'>$errors[0]</div>";
@@ -25,7 +37,7 @@
         <br>
         <br>
         <label for="password">Password :</label>
-        <input type="password" name="password" id="password" required>
+        <input type="password" name="password" id="password" required maxlength="255">
         <?php
         if (!empty($errors[2]))
             echo "<div class='error'>$errors[2]</div>";
