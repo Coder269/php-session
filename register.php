@@ -30,6 +30,7 @@ unset($_SESSION['username']);
             <div class=<?= isset($errors[0]) ? 'error' : '' ?>><?= isset($errors[0]) ? $errors[0] : ''; ?></div>
             <div class=<?= isset($errors[1]) ? 'error' : '' ?>><?= isset($errors[1]) ? $errors[1] : ''; ?></div>
             <br>
+            <br>
             <label for="password">Password :</label>
             <input type="password" name="password" id="password" required maxlength="255">
             <br>

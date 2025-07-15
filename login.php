@@ -23,32 +23,37 @@ unset($_SESSION['errors']);
     <h1>Log-in</h1>
 </header>
 <main>
-<form action="login_handler.php" method="post">
-    <fieldset>
-        <legend>Sign-in</legend>
-        <label for="username">Username :</label>
-        <input type="text" name="username" id="username" required maxlength="50" value="<?= $username?>">
-        <?php
-        if (!empty($errors[0]))
-        echo "<div class='error'>$errors[0]</div>";
-        if (!empty($errors[1]))
-            echo "<div class='error'>$errors[1]</div>";
-        ?>
-        <br>
-        <br>
-        <label for="password">Password :</label>
-        <input type="password" name="password" id="password" required maxlength="255">
-        <?php
-        if (!empty($errors[2]))
-            echo "<div class='error'>$errors[2]</div>";
-        ?>
-        <br>
-        <br>
-        <br>
-        <input type="submit" value="Sign-in">
-    </fieldset>
-</form>
-    <p>If you don't have an account yet, please <a href="register.php" >Register Here</a>!</p>
+    <form action="login_handler.php" method="post">
+        <fieldset>
+            <legend>Sign-in</legend>
+            <label for="username">Username :</label>
+            <input type="text" name="username" id="username" required maxlength="50" value="<?= $username ?>">
+            <?php
+            if (!empty($errors[0]))
+                echo "<div class='error'>$errors[0]</div>";
+            if (!empty($errors[1]))
+                echo "<div class='error'>$errors[1]</div>";
+            ?>
+            <br>
+            <br>
+            <br>
+            <label for="password">Password :</label>
+            <input type="password" name="password" id="password" required maxlength="255">
+            <?php
+            if (!empty($errors[2]))
+                echo "<div class='error'>$errors[2]</div>";
+            ?>
+            <?php
+            if (!empty($errors[3]))
+                echo "<div class='error'>$errors[3]</div>";
+            ?>
+            <br>
+            <br>
+            <br>
+            <input type="submit" value="Sign-in">
+        </fieldset>
+    </form>
+    <p>If you don't have an account yet, please <a href="register.php">Register Here</a>!</p>
 </main>
 </body>
 </html>

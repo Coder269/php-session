@@ -29,10 +29,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && !empty($_POST))
         $user = $statement->fetch();
         if (!$user)
         {
-            $errors[] = 'Username does not exist!';
+            $errors[] = 'This Username does not exist!';
         }
         else if (!password_verify($password, $user['password'])) {
-            $errors[2] = 'Password is incorrect!';
+            $errors[2] = 'The Password is incorrect!';
         }
         else
         {
