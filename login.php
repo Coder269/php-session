@@ -6,6 +6,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
 
 //nettoyer la session
 unset($_SESSION['errors']);
+unset($_SESSION['username']);
 
 
 ?>
